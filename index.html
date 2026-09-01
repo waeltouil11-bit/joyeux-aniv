@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joyeux Anniversaire Naëlle ! ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -23,14 +24,15 @@
       background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
       color: white;
       text-align: center;
-      padding: 80px 20px;
+      padding: 70px 20px;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
+      box-shadow: 0 4px 15px rgba(255, 117, 140, 0.3);
     }
 
     .hero h1 {
       font-family: 'Sacramento', cursive;
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       margin-bottom: 10px;
     }
 
@@ -42,10 +44,10 @@
 
     .card {
       background: white;
-      border-radius: 15px;
+      border-radius: 20px;
       padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       text-align: center;
     }
 
@@ -58,16 +60,19 @@
       background-color: #ff4d6d;
       color: white;
       border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 25px;
+      padding: 14px 28px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 30px;
       cursor: pointer;
       margin-top: 20px;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 77, 109, 0.3);
     }
 
     button:hover {
       background-color: #c9184a;
+      transform: translateY(-2px);
     }
 
     .hidden-text {
@@ -82,7 +87,14 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 25px;
+    }
+
+    .photo-card {
+      background: #fafafa;
+      padding: 12px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .photo-card img {
@@ -90,7 +102,6 @@
       height: 320px;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .photo-card p {
@@ -102,15 +113,14 @@
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       color: #888;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- En-tête -->
   <header class="hero">
     <div class="hero-content">
       <h1>Joyeux Anniversaire Naëlle ! ✨</h1>
@@ -118,7 +128,6 @@
     </div>
   </header>
 
-  <!-- Contenu principal -->
   <main class="container">
     <section class="card message-card">
       <h2>Pour la plus fabuleuse des copines ❤️</h2>
@@ -127,25 +136,24 @@
         Que cette nouvelle année t'apporte tout ce que tu désires !
       </p>
       
-      <button id="loveBtn" onclick="showSurprise()">Clique ici pour une surprise</button>
+      <button id="loveBtn" onclick="showSurprise()">Clique ici pour une surprise ✨</button>
       <p id="surpriseText" class="hidden-text"></p>
     </section>
 
-    <!-- Galerie photos dans l'ordre -->
     <section class="card memories-card">
       <h2>Les meilleures photos de toi princesse 👑</h2>
       <div class="gallery">
         <div class="photo-card">
-          <img src="Snapchat - (1) Snapchat 02_09_2026 00_39_31.jpg" alt="Photo Naëlle 1">
-          <p>Un regard magnifique ✨</p>
+          <img src="./Snapchat - (1) Snapchat 02_09_2026 00_39_31.jpg" alt="Photo Naëlle 1">
+          <p>la plus belle✨</p>
         </div>
         <div class="photo-card">
-          <img src="Snapchat - (1) Snapchat 02_09_2026 00_37_39.png" alt="Photo Naëlle 2">
-          <p>Au bord de l'eau, rayonnante 🌊</p>
+          <img src="./Snapchat - (1) Snapchat 02_09_2026 00_37_39.png" alt="Photo Naëlle 2">
+          <p>ton plus beau sourire</p>
         </div>
         <div class="photo-card">
-          <img src="Snapchat - (4) Snapchat 25_08_2026 13_51_42.jpg" alt="Photo Naëlle 3">
-          <p>Ton plus joli sourire ❤️</p>
+          <img src="./Snapchat - (4) Snapchat 25_08_2026 13_51_42.jpg" alt="Photo Naëlle 3">
+          <p>un rayon de soleil❤️</p>
         </div>
       </div>
     </section>
@@ -156,12 +164,20 @@
   </footer>
 
   <script>
+    window.onload = function() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    };
+
     const messages = [
-      "Raison 1 : Ton sourire illumine mes journées !",
-      "Raison 2 : Tu es la personne la plus attentionnée que je connaisse.",
-      "Raison 3 : Chaque moment passé avec toi est un cadeau.",
-      "Raison 4 : Tu me fais rire comme personne d'autre !",
-      "Je t'aime très fort Naëlle, passe une journée extraordinaire !"
+      "Raison 1 : Ton sourire illumine toutes mes journées ! ☀️",
+      "Raison 2 : Tu es la personne la plus attentionnée et merveilleuse. ❤️",
+      "Raison 3 : Chaque moment passé à tes côtés est un vrai cadeau. 🎁",
+      "Raison 4 : Tu me fais rire comme personne d'autre ! 😊",
+      "Je t'aime de tout mon cœur Naëlle, passe une journée extraordinaire ! 👑✨"
     ];
 
     let currentIndex = 0;
@@ -169,6 +185,12 @@
     function showSurprise() {
       const surpriseElement = document.getElementById("surpriseText");
       surpriseElement.innerText = messages[currentIndex];
+
+      confetti({
+        particleCount: 40,
+        spread: 60,
+        origin: { y: 0.7 }
+      });
       
       currentIndex = (currentIndex + 1) % messages.length;
     }
