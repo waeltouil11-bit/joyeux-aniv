@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux Anniversaire Naëlle ! ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f3;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .hero h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: -30px auto 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .message-card h2, .memories-card h2 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c9184a;
+    }
+
+    .hidden-text {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #ff4d6d;
+      font-size: 1.2rem;
+      min-height: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .photo-card p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Joyeux Anniversaire Naëlle ! ✨</h1>
+      <p>Aujourd'hui, c'est ta journée. J'ai créé ce petit coin du web rien que pour toi.</p>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <section class="card message-card">
+      <h2>Pour la plus fabuleuse des copines ❤️</h2>
+      <p>
+        Naëlle, je te souhaite une journée remplie de joie, de rires et de bonheur.
+        Que cette nouvelle année t'apporte tout ce que tu désires !
+      </p>
+      
+      <button id="loveBtn" onclick="showSurprise()">Clique ici pour une surprise</button>
+      <p id="surpriseText" class="hidden-text"></p>
+    </section>
+
+    <!-- Galerie photos dans l'ordre -->
+    <section class="card memories-card">
+      <h2>Les meilleures photos de toi princesse 👑</h2>
+      <div class="gallery">
+        <div class="photo-card">
+          <img src="Snapchat - (1) Snapchat 02_09_2026 00_39_31.jpg" alt="Photo Naëlle 1">
+          <p>Un regard magnifique ✨</p>
+        </div>
+        <div class="photo-card">
+          <img src="Snapchat - (1) Snapchat 02_09_2026 00_37_39.png" alt="Photo Naëlle 2">
+          <p>Au bord de l'eau, rayonnante 🌊</p>
+        </div>
+        <div class="photo-card">
+          <img src="Snapchat - (4) Snapchat 25_08_2026 13_51_42.jpg" alt="Photo Naëlle 3">
+          <p>Ton plus joli sourire ❤️</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fait avec tout mon amour pour Naëlle 💖</p>
+  </footer>
+
+  <script>
+    const messages = [
+      "Raison 1 : Ton sourire illumine mes journées !",
+      "Raison 2 : Tu es la personne la plus attentionnée que je connaisse.",
+      "Raison 3 : Chaque moment passé avec toi est un cadeau.",
+      "Raison 4 : Tu me fais rire comme personne d'autre !",
+      "Je t'aime très fort Naëlle, passe une journée extraordinaire !"
+    ];
+
+    let currentIndex = 0;
+
+    function showSurprise() {
+      const surpriseElement = document.getElementById("surpriseText");
+      surpriseElement.innerText = messages[currentIndex];
+      
+      currentIndex = (currentIndex + 1) % messages.length;
+    }
+  </script>
+</body>
+</html>
